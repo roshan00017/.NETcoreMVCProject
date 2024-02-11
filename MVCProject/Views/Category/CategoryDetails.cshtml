@@ -1,0 +1,60 @@
+﻿@model MVCProject.Models.Domain.Category
+
+@{
+    ViewData["Title"] = "Category Details";
+    Layout = "~/Views/Shared/_Layout.cshtml"; // Assuming you have a layout file
+}
+
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content header (Page header) -->
+    <div class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1 class="m-0">
+                        Category Details
+                    </h1>
+                </div><!-- /.col -->
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item">
+
+                            <i class="nav-icon fas fa-tachometer-alt"></i>
+                            TaskCRM
+
+                        </li>
+
+
+                        <li class="breadcrumb-item">
+                            Category Details
+                        </li>
+                    </ol>
+                </div><!-- /.col -->
+            </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
+    </div>
+
+
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="form-group col-md-4">
+                                    <label for="inputName">
+                                        Title
+                                    </label>
+                                    <input asp-for="Name" type="text" class="form-control" readonly>
+                                    <span class="text-danger" asp-validation-for="Name"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

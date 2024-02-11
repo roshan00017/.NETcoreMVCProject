@@ -1,0 +1,91 @@
+﻿@model MVCProject.Models.DTO.CategoryDto
+
+@{
+    ViewData["Title"] = "Create Category";
+    Layout = "~/Views/Shared/_Layout.cshtml"; // Assuming you have a layout file
+}
+
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content header (Page header) -->
+    <div class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1 class="m-0 {{setFont()}}">
+                        Create Category
+                    </h1>
+                </div><!-- /.col -->
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right {{setFont()}}">
+                        <li class="breadcrumb-item">
+
+                            <i class="nav-icon fas fa-tachometer-alt"></i>
+                            TaskCRM
+
+                        </li>
+
+
+                        <li class="breadcrumb-item">
+                            Create Category
+                        </li>
+                    </ol>
+                </div><!-- /.col -->
+            </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
+    </div>
+
+
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <form asp-action="CreateCategory" method="post">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="form-group col-md-6">
+                                        <label for="inputName">
+                                            Name
+                                        </label>
+
+                                        <input asp-for="Name" type="text" class="form-control">
+                                        <span class="text-danger" asp-validation-for="Name"></span>
+
+                                    </div>
+
+
+                                    <div class="form-group col-md-4">
+                                        <label for="inputUserId">Created By</label>
+                                        <select asp-for="CreatedBy" class="form-control select2" id="inputUserId" data-placeholder="Select a user">
+                                            <!-- Populate options dynamically using Razor syntax -->
+                                            @foreach (var user in ViewBag.Users)
+                                            {
+                                                <option value="@user.UserId">@user.UserName</option>
+                                            }
+                                        </select>
+                                        <span class="text-danger" asp-validation-for="CreatedBy"></span>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                            <div class="modal-footer justify-content-center ">
+                                <button type="submit" class="btn btn-primary  rounded-pill" id="btn-add">
+                                    <i class="fa fa-save"></i>
+                                    Save
+                                </button>
+
+                            </div>
+                        </form>
+
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

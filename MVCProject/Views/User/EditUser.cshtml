@@ -1,0 +1,101 @@
+﻿@model MVCProject.Models.Domain.User
+
+@{
+    ViewData["Title"] = "Edit User";
+    Layout = "~/Views/Shared/_Layout.cshtml"; // Assuming you have a layout file
+}
+
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content header (Page header) -->
+    <div class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1 class="m-0 {{setFont()}}">
+                        Edit User
+                    </h1>
+                </div><!-- /.col -->
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right {{setFont()}}">
+                        <li class="breadcrumb-item">
+
+                            <i class="nav-icon fas fa-tachometer-alt"></i>
+                            TaskCRM
+
+                        </li>
+
+
+                        <li class="breadcrumb-item">
+                            Edit User
+                        </li>
+                    </ol>
+                </div><!-- /.col -->
+            </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
+    </div>
+
+
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <form asp-action="EditUser" method="post">
+                            <div class="card-body">
+                                <div class="row">
+
+                                    <input type="hidden" name="UserId" value="@ViewBag.UserId" />
+                                    <div class="form-group col-md-6">
+                                        <label for="inputEmail">
+                                            Email
+                                        </label>
+
+                                        <input asp-for="Email" type="email" class="form-control">
+                                        <span class="text-danger" asp-validation-for="Email"></span>
+
+                                    </div>
+
+                                    <div class="form-group col-md-6">
+                                        <label for="inputUserName">
+                                            UserName
+                                        </label>
+
+                                        <input asp-for="UserName" type="text" class="form-control">
+                                        <span class="text-danger" asp-validation-for="UserName"></span>
+
+                                    </div>
+
+                                    <div class="form-group col-md-6">
+                                        <label for="inputPassword">
+                                            Password
+                                        </label>
+
+                                        <input asp-for="Password" type="password" class="form-control">
+                                        <span class="text-danger" asp-validation-for="Password"></span>
+
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <div class="modal-footer justify-content-center ">
+                                <button type="submit" class="btn btn-primary  rounded-pill" id="btn-update">
+                                    <i class="fa fa-save"></i>
+                                    Update
+                                </button>
+
+                            </div>
+                        </form>
+
+                    </div>
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

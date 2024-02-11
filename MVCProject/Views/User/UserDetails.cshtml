@@ -1,0 +1,76 @@
+﻿@model MVCProject.Models.Domain.User
+
+@{
+    ViewData["Title"] = "User Details";
+    Layout = "~/Views/Shared/_Layout.cshtml"; // Assuming you have a layout file
+}
+
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content header (Page header) -->
+    <div class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1 class="m-0">
+                        User Details
+                    </h1>
+                </div><!-- /.col -->
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item">
+
+                            <i class="nav-icon fas fa-tachometer-alt"></i>
+                            TaskCRM
+
+                        </li>
+
+
+                        <li class="breadcrumb-item">
+                            User Details
+                        </li>
+                    </ol>
+                </div><!-- /.col -->
+            </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
+    </div>
+
+
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="form-group col-md-6">
+                                    <label for="inputEmail">
+                                        Email
+                                    </label>
+                                    <input asp-for="Email" type="email" class="form-control" readonly>
+                                    <span class="text-danger" asp-validation-for="Email"></span>
+                                </div>
+
+                                <div class="form-group col-md-6">
+                                    <label for="inputUserName">
+                                        UserName
+                                    </label>
+                                    <input asp-for="UserName" type="text" class="form-control" readonly>
+                                    <span class="text-danger" asp-validation-for="UserName"></span>
+                                </div>
+
+                                <div class="form-group col-md-6">
+                                    <label for="inputPassword">
+                                        Password
+                                    </label>
+                                    <input asp-for="Password" type="password" class="form-control" readonly>
+                                    <span class="text-danger" asp-validation-for="Password"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

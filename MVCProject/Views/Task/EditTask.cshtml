@@ -1,0 +1,125 @@
+﻿@model MVCProject.Models.Domain.Task
+
+@{
+    ViewData["Title"] = "Task List";
+    Layout = "~/Views/Shared/_Layout.cshtml"; // Assuming you have a layout file
+}
+
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content header (Page header) -->
+    <div class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1 class="m-0 {{setFont()}}">
+                       Edit
+                    </h1>
+                </div><!-- /.col -->
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right {{setFont()}}">
+                        <li class="breadcrumb-item">
+
+                            <i class="nav-icon fas fa-tachometer-alt"></i>
+                            TaskCRM
+
+                        </li>
+
+
+                        <li class="breadcrumb-item">
+                          Edit
+                        </li>
+                    </ol>
+                </div><!-- /.col -->
+            </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
+    </div>
+
+
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <form asp-action="EditTask" method="post">
+                            <div class="card-body">
+                             
+                                <div class="row">
+                                    <div class="form-group col-md-4">
+                                        <label for="inputName">
+                                            Title
+                                        </label>
+
+
+                                        <input asp-for="Title" type="text" class="form-control">
+                                        <span class="text-danger" asp-validation-for="Title"></span>
+
+                                    </div>
+                                    <input type="hidden" name="TaskID" value="@ViewBag.TaskID" />
+
+
+                                    <div class="form-group col-md-4">
+                                        <label for="inputDescription">Description</label>
+                                        <input asp-for="Description" type="text" class="form-control" id="inputDescription">
+                                        <span class="text-danger" asp-validation-for="Description"></span>
+                                    </div>
+
+                                    <div class="form-group col-md-4">
+                                        <label for="inputDueDate">Due Date</label>
+                                        <input type="datetime-local" name="DuDate" class="form-control">
+                                        <span class="text-danger" asp-validation-for="DueDate"></span>
+                                    </div>
+
+                                    <div class="form-group col-md-4">
+                                        <label for="inputIsCompleted">Is Completed</label>
+                                        <input asp-for="IsCompleted" type="checkbox" class="radio-button" id="inputIsCompleted">
+                                        <span class="text-danger" asp-validation-for="IsCompleted"></span>
+                                    </div>
+
+                                    <div class="form-group col-md-4">
+                                        <label for="inputUserId">User</label>
+                                        <select asp-for="UserId" class="form-control select2" id="inputUserId" data-placeholder="Select a user">
+                                            <!-- Populate options dynamically using Razor syntax -->
+                                           @foreach (var user in ViewBag.Users)
+                                            {
+                                            <option value="@user.UserId">@user.UserName</option>
+                                            }
+                                        </select>
+                                        <span class="text-danger" asp-validation-for="UserId"></span>
+                                    </div>
+
+                                    <div class="form-group col-md-4">
+                                        <label for="inputCategoryId">Category</label>
+                                        <select asp-for="CategoryId" class="form-control select2" id="inputCategoryId" data-placeholder="Select a category">
+                                            <!-- Populate options dynamically using Razor syntax -->
+                                         @foreach (var category in ViewBag.Categories)
+                                            {
+                                            <option value="@category.Id">@category.Name</option>
+                                            } 
+                                        </select>
+                                        <span class="text-danger" asp-validation-for="CategoryId"></span>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+
+                            <div class="modal-footer justify-content-center ">
+                                <button type="submit" class="btn btn-primary  rounded-pill" id="btn-add">
+                                    <i class="fa fa-Update"></i>
+                                   Update
+                                </button>
+
+                            </div>
+                        </form>
+
+                    </div>
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </section>
