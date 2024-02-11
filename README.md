@@ -52,7 +52,8 @@ This documentation provides an overview of a .NET Core MVC project that implemen
 - **Views:** Contains the HTML templates and UI components rendered by the application.
 - **Data:** Includes database context and migrations for managing database operations.
 - **Services:** Contains service classes for implementing business logic and data manipulation.
-- **Scripts and Styles:** Includes JavaScript and CSS files for frontend functionality and styling.
+- **Repositiry**
+
 
 ## Dependencies
 
@@ -76,9 +77,9 @@ This project is licensed under the [MIT License](LICENSE).
 
 ## Authors
 
-- [Your Name](https://github.com/roshan00017) - Developer
+- [Roshan Gyawali](https://github.com/roshan00017) - Developer
 
-
+Some Screenshots
 
 ![Screenshot (5)](https://github.com/roshan00017/.NETcoreMVCProject/assets/57831675/d31c171f-0bea-4683-8743-b0e1b7676c87)
 
